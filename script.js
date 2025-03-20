@@ -24,10 +24,10 @@ function startCountdown() {
     countdown = 10;
     timerElement.textContent = `${countdown}s`;
 
-    // Reset winning box colors when the countdown starts
+  
     betBoxes.forEach(box => {
-        box.style.backgroundColor = "#FF7043"; // Sunset Orange (default bet box color)
-        box.style.boxShadow = "0px 0px 15px rgba(255, 213, 79, 0.8)"; // Golden Yellow shadow
+        box.style.backgroundColor = "#FF7043"; 
+        box.style.boxShadow = "0px 0px 15px rgba(255, 213, 79, 0.8)"; 
     });
 
     showPrompt(startBettingPrompt);
@@ -58,13 +58,13 @@ function startOvalAnimation(callback) {
 
     const animationInterval = setInterval(() => {
         if (index > 0) {
-            outerBoxes[index - 1].style.boxShadow = "inset 0px 0px 15px rgba(255, 213, 79, 0.8)"; // Golden Yellow
+            outerBoxes[index - 1].style.boxShadow = "inset 0px 0px 15px rgba(255, 213, 79, 0.8)"; 
         } else if (loopCount > 0) {
-            outerBoxes[outerBoxes.length - 1].style.boxShadow = "inset 0px 0px 15px rgba(255, 213, 79, 0.8)"; // Golden Yellow
+            outerBoxes[outerBoxes.length - 1].style.boxShadow = "inset 0px 0px 15px rgba(255, 213, 79, 0.8)"; 
         }
 
-        // Extremely bright and vibrant animation color for active box
-        outerBoxes[index].style.boxShadow = "inset 0px 0px 30px rgba(0, 255, 255, 1)"; // Neon Cyan (Extremely Bright)
+ 
+        outerBoxes[index].style.boxShadow = "inset 0px 0px 30px rgba(0, 255, 255, 1)"; 
 
         index = (index + 1) % outerBoxes.length;
 
@@ -75,7 +75,7 @@ function startOvalAnimation(callback) {
         if (loopCount === 2) {
             clearInterval(animationInterval);
             outerBoxes.forEach(box => {
-                box.style.boxShadow = "inset 0px 0px 15px rgba(255, 213, 79, 0.8)"; // Golden Yellow
+                box.style.boxShadow = "inset 0px 0px 15px rgba(255, 213, 79, 0.8)"; 
             });
             if (callback) callback();
         }
@@ -87,8 +87,8 @@ function declareWinner() {
     const winningBox = betBoxes[winnerIndex];
 
     showPrompt(winnerPrompt, `Winner: ${winningBox.textContent}`);
-    winningBox.style.backgroundColor = "#AB47BC"; // Vibrant Purple
-    winningBox.style.boxShadow = "0px 0px 25px rgba(171, 71, 188, 0.8)"; // Vibrant Purple shadow
+    winningBox.style.backgroundColor = "#AB47BC"; 
+    winningBox.style.boxShadow = "0px 0px 25px rgba(171, 71, 188, 0.8)"; 
 
     sequenceIndex = (sequenceIndex + 1) % winningSequence.length;
 }
